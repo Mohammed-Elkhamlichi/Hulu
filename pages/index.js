@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Home() {
+const Home = () => {
     return (
         <div className=''>
             <main className=''>
@@ -13,4 +13,5 @@ export default function Home() {
             </main>
         </div>
     );
-}
+};
+export default Home;
