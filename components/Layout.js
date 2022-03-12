@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
+import Script from "next/script";
 
 const Layout = ({ children }) => {
     return (
@@ -15,6 +16,7 @@ const Layout = ({ children }) => {
                 />
                 <link rel='icon' href='/hulu.png' />
             </Head>
+            <Script src='https://cdn.tailwindcss.com'></Script>
 
             {/* The Header */}
             <Header />
