@@ -3,8 +3,10 @@ import React from "react";
 const Footer = () => {
     const thisYear = new Date().getFullYear();
     return (
-        <footer className='group fixed right-0 left-0 bottom-0 text-center font-mono text-xl mb-3'>
-            <p className='group-hover:animate-pulse'>Hulu&copy;{thisYear}</p>
+        <footer className='group text-center font-mono text-xl my-5'>
+            <p className='group-hover:animate-pulse'>
+                Hulu&copy;{thisYear} By MohammedElkhamlichi.com
+            </p>
         </footer>
     );
 };

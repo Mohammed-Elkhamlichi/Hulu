@@ -1,30 +1,38 @@
 import Image from "next/image";
+import Results from "../components/Results";
 import requests from "../utils/requests";
 
-const Home = ({ trendingMedia }) => {
-  return (
-    <div className=''>
-      <main className='relative'>
-        {/* <Image
-          src='/hulu-logo-4.png'
-          layout='fixed'
-          className='object-center  opacity-25'
-          alt='hulu image'
-        /> */}
-      </main>
-    </div>
-  );
+const Home = ({ results }) => {
+    console.log({ "The index page Result : ": results });
+    return (
+        <div className=''>
+            <main className=''>
+                <Results results={results} />
+            </main>
+        </div>
+    );
 };
-export const getStaticProps = async () => {
-  console.log(requests.fetchTrending.url);
-  const res = await fetch(requests.fetchTrending.url);
-  const trendingMedia = await res.json();
-  console.log({ trendingMedia });
-  return {
-    props: {
-      trendingMedia,
-    },
-  };
+
+export const getServerSideProps = async (context) => {
+    const genre = context.query.genre;
+    const BaseApiUrl = process.env.BaseApiUrl;
+    console.log({
+        url: `https://api.themoviedb.org/3/${
+            requests[genre]?.url || requests.fetchTrending.url
+        }`,
+    });
+    const res = await fetch(
+        `https://api.themoviedb.org/3/${
+            requests[genre]?.url || requests.fetchTrending.url
+        }`
+    );
+    const data = await res.json();
+    const results = data;
+    return {
+        props: {
+            results,
+        },
+    };
 };
 
 export default Home;
