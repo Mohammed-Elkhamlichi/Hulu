@@ -19,6 +19,7 @@ const requests = {
     },
     fetchHorrorMovies: {
         title: "Horror",
+        // discover/movie?api_key=<<api_key>>
         url: `/discover/movie?api_key=${apiKey}&with_genres=27`,
     },
     fetchRomanceMovies: {
