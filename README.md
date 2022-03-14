@@ -32,3 +32,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+/****************************************/
+
+## add your API Key and other environment variables to the next project
+go to the project folder and create a .env.local file and inside this file define an apiKey variable 
+like apikey=DH52G5262hhfhzfrzgzv6626
+
+
