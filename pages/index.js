@@ -3,11 +3,13 @@ import { huluContext } from "../context/context";
 import Image from "next/image";
 import Results from "../components/Results";
 import requests from "../utils/requests";
+import SearchMovie from "../components/Search";
 
 const Home = ({ resultsByGenres }) => {
     return (
         <div className=''>
             <main className=''>
+                <SearchMovie />
                 {/* get the resultsByGenres props from getServerSideProps method
                 and pass it to the Results Component */}
                 <Results results={resultsByGenres} />

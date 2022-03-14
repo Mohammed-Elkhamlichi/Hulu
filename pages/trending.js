@@ -1,10 +1,12 @@
 import React from "react";
 import axios from "axios";
 import Results from "../components/Results";
+import SearchMovie from "../components/Search";
 
 const Trending = ({ trendingMovies }) => {
     return (
         <>
+            <SearchMovie />
             <Results results={trendingMovies} />
         </>
     );

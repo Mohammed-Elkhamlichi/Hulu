@@ -24,6 +24,7 @@ export const getServerSideProps = async (context) => {
         `${BaseApiUrl}search/movie?api_key=${apiKey}&query=${search}`
     );
     const moviesFound = await res.data;
+    console.log(moviesFound);
     return { props: { moviesFound } };
 };
 
