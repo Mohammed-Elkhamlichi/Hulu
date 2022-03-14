@@ -10,7 +10,9 @@ const Thumbnail = ({ movie }) => {
             key={movie.id}
         >
             <div
-                className={`relative w-auto h-64 rounded-lg after:content-['${movie.media_type}'] after:hover:content-["watch_now"] after:absolute after:bg-slate-700 after:tracking-widest after:text-gray-300 after:text-lg after:animate-pulse after:hover:text-yellow-500 after:px-3 after:py-1 after:rounded-tl-lg after:opacity-50`}
+                className={`relative w-auto h-64 rounded-lg after:content-['${
+                    movie.media_type || "Movie"
+                }'] after:hover:content-["watch_now"] after:absolute after:bg-slate-700 after:tracking-widest after:text-gray-300 after:text-lg after:animate-pulse after:hover:text-yellow-500 after:px-3 after:py-1 after:rounded-tl-lg after:opacity-50`}
             >
                 <Image
                     src={`${BASE_URL}${
