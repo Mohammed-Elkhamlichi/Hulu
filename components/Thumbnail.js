@@ -19,8 +19,6 @@ const Thumbnail = ({ movie }) => {
                         movie.poster_path || movie.backdrop_path
                     }`}
                     layout='fill'
-                    // width={1080}
-                    // height={1080}
                     alt='Movie Image'
                     className='rounded-tr-lg rounded-tl-lg object-fill'
                 />
@@ -34,13 +32,13 @@ const Thumbnail = ({ movie }) => {
                 </p>
 
                 <div className='flex items-center lg:opacity-0 lg:group-hover:opacity-100 space-x-2 p-2 justify-between'>
-                    <div> {movie.release_date || "YY-MM-DD"}</div>{" "}
+                    <div> {movie.release_date || "YY-MM-DD"}</div>
                     <div className='flex items-center'>
                         {movie.vote_average || 6.7}
                         <StarIcon className='h-8 p-1 text-yellow-300' />
                     </div>
                     <div className='flex items-center '>
-                        {movie.vote_count || 100}{" "}
+                        {movie.vote_count || 100}
                         <ThumbUpIcon className='h-8 p-2 text-blue-500' />
                     </div>
                 </div>

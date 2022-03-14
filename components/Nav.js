@@ -5,7 +5,10 @@ import { huluContext } from "../context/context";
 import axios from "axios";
 
 const Nav = () => {
+    // genres state
     const [genres, setGenres] = useState([]);
+
+    // next Router
     const router = useRouter();
 
     // fetch movies genres
