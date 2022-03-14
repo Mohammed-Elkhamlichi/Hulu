@@ -10,6 +10,7 @@ const Trending = ({ trendingMovies }) => {
     );
 };
 
+// server side rendering
 export const getServerSideProps = async (context) => {
     // !trending movies api url:
     // ! https://api.themoviedb.org/3/trending/all/day?api_key=<<api_key>>

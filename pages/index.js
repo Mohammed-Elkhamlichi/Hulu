@@ -4,12 +4,13 @@ import Image from "next/image";
 import Results from "../components/Results";
 import requests from "../utils/requests";
 
-const Home = ({ results }) => {
-    // ! fetch the movies
+const Home = ({ resultsByGenres }) => {
     return (
         <div className=''>
             <main className=''>
-                <Results results={results} />
+                {/* get the resultsByGenres props from getServerSideProps method
+                and pass it to the Results Component */}
+                <Results results={resultsByGenres} />
             </main>
         </div>
     );
@@ -26,10 +27,10 @@ export const getServerSideProps = async (context) => {
         `${BaseApiUrl}discover/movie?api_key=${apiKey}&with_genres=${genre}`
     );
     const data = await res.json();
-    const results = data;
+    const resultsByGenres = data;
     return {
         props: {
-            results,
+            resultsByGenres,
         },
     };
 };

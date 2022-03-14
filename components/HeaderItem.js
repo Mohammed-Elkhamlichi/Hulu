@@ -4,9 +4,13 @@ import { useRouter } from "next/router";
 
 const HeaderItem = ({ Icon, title }) => {
     const router = useRouter();
-    // const s = "MME";
-    // const path = s.toLocaleLowerCase;
     return (
+        /*
+         this Component compose from the header elements like the Home, Account, Search ....;
+         and i use Next Router to push the user to the page he clicked on it;
+        and i use toLocaleLowerCase() to make the string lower case.
+         */
+
         <div
             className='group  flex flex-col  py-1 px-1 mb-0 mt-4 mr-1 cursor-pointer items-center  w-12 sm:w-16 md:w-20'
             onClick={() =>

@@ -1,7 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
-import requests from "../utils/requests";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { huluContext } from "../context/context";
 import axios from "axios";
 
 const Nav = () => {
@@ -21,7 +19,6 @@ const Nav = () => {
             .get(genresBaseUrl)
             .then((res) => {
                 setGenres(res.data.genres);
-                console.log(genres);
             })
             .catch((error) => console.log(error));
     }, [apiKey, BaseApiUrl]);
