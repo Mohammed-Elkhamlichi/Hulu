@@ -1,14 +1,14 @@
-import React from "react";
+import { useContext } from "react";
 import requests from "../utils/requests";
 import { useRouter } from "next/router";
-import { useHuluContext } from "../context/context";
+import { huluContext } from "../context/context";
 
 const Nav = () => {
     const router = useRouter();
-    const { state, dispatch } = useHuluContext();
-    console.log("state :" + state);
-    console.log("dispatch:" + dispatch);
-    
+    // the Context Api
+    const [state, dispatch] = useContext(huluContext);
+    console.log(state.geners);
+    console.log("context api from Nav: ", useContext(huluContext));
     return (
         <nav className='relative'>
             <div className='flex flex-row space-x-3 px-10 sm:px-20 sm:space-x-4 my-4 text-xl   items-center overflow-x-scroll scrollbar-hide'>

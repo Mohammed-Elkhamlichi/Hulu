@@ -1,6 +1,7 @@
 export const initialState = {
     movies: [],
-    genres: [],
+    genres: null,
+    dev: "Mohammed ELkhamlichi",
 };
 
 const actionTypes = {
@@ -11,10 +12,8 @@ const actionTypes = {
 export const reducer = (state, action) => {
     switch (action.type) {
         case "GET_MOVIES_GENERS":
-            return {
-                ...state,
-                genres: ["action", "drama"],
-            };
+            return { ...state, genres: action.genersfetched };
+
         case GET_MOVIES_LIST:
             return {
                 ...state,
