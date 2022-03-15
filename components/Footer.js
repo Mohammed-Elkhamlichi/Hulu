@@ -3,8 +3,15 @@ import Link from "next/link";
 
 const Footer = () => {
     const thisYear = new Date().getFullYear();
+    const footerDisplay =
+        window.scrollY < window.screen.height
+            ? "block"
+            : "fixed right-0  bottom-0 left-0";
+    console.log(window.scrollY);
     return (
-        <footer className='group text-center font-mono text-xl my-5'>
+        <footer
+            className={` ${footerDisplay} group   text-center font-mono text-xl my-5`}
+        >
             <p className='group-hover:animate-pulse'>
                 Hulu&copy;{thisYear} By{" "}
                 <a
